@@ -16,16 +16,17 @@ export default function SliderItem({item}) {
       justifyContent:'center',
     },
     header:{
-      flex:0.5,
+      flex:1,
       flexDirection:'row',
       direction:'rtl',
       justifyContent:'flex-end',
     },
     header_Img:{
-      width:81,
-      height:74,
-      marginTop:40,
-      marginRight:20,
+      width:'20%',
+      height:'40%',
+      marginTop:'8%',
+      marginRight:'5%',
+      resizeMode:'contain',
     },
     title:{
       fontWeight:'800',
@@ -49,7 +50,7 @@ export default function SliderItem({item}) {
           <Image source={item.header_Img} style={styles.header_Img}/>
         </View>
         {/* <Image source={item.image} style={[styles.image, {width, resizeMode: 'contain' }]}/> */}
-        <View style={{flex:0.5}}>
+        <View style={{flex:4}}>
           <Text style={styles.description}>{item.description}</Text>
         </View>
     </View>

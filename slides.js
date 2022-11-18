@@ -29,7 +29,7 @@ export default [
     {
         id:'4',
         header_Img:require('./assets/logoFAHYellow.png'),
-        title:'Fourth Slide',
+        title:'Registrate',
         description:'Registrate',
         image:require('./assets/googleIcon.png'),
         background_color:'#3A302E',
