@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rate-app",
-    "slug": "rate-app",
+    "name": "finda-home",
+    "slug": "finda-home",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
