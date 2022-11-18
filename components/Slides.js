@@ -14,7 +14,7 @@ export default function Slider() {
   const viewConfig = useRef({viewAreaCoveragePercentThreshold:50}).current;
   return (
     <View style={styles.container}>
-      <View style={{ flex:3}}>
+      <View style={{ flex:1}}>
         <FlatList 
         data={slides} 
         renderItem={({item})=> <SlidesItem item={item} /> }
