@@ -40,6 +40,7 @@ export default function SliderItem({item, slides, scrollX}) {
       fontWeight:'300',
       color:`${item.color}`,
       textAlign:'center',
+      fontSize:item.description_font_size,
       paddingHorizontal:64,
     }
   });
@@ -51,7 +52,7 @@ export default function SliderItem({item, slides, scrollX}) {
           <Image source={item.header_Img} style={styles.header_Img}/>
         </View>
         {/* <Image source={item.image} style={[styles.image, {width, resizeMode: 'contain' }]}/> */}
-        <View style={{flex:4}}>
+        <View style={{flex:4,justifyContent:'center'}}>
           <Text style={styles.description}>{item.description}</Text>
         </View>
         <Paginator data={slides} scrollX={scrollX}/>
