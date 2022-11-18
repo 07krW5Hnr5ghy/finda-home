@@ -8,19 +8,26 @@ export default function Paginator({data, scrollX}) {
         <View style={{flexDirection:'row', height:64 }}>
         {data.map((_,i)=> {
             const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
-            const dotWidth = scrollX.interpolate({
-                inputRange,
-                outputRange:[10,20,10],
-                extrapolate:'clamp',
-            });
             const opacity = scrollX.interpolate({
                 inputRange,
                 outputRange: [0.3,1,0.3],
                 extrapolate:'clamp',
             });
             return <Animated.View style={[styles.dot,{
-                width:dotWidth,
                 opacity,
+                backgroundColor:scrollX.interpolate({
+                    inputRange,
+                    outputRange:['#D9D9D9','#AB4E68','#D9D9D9'],
+                    extrapolate:'clamp',
+                }),
+                borderColor:scrollX.interpolate({
+                    inputRange,
+                    outputRange:['#D9D9D9','#FFC733','#D9D9D9'],
+                }),
+                borderWidth:scrollX.interpolate({
+                    inputRange,
+                    outputRange:[0,2,0],
+                }),
             }]} key={i.toString()} />;
         })}
         </View>
@@ -30,9 +37,9 @@ export default function Paginator({data, scrollX}) {
 
 const styles = StyleSheet.create({
   dot:{
-    height:10,
-    borderRadius:5,
-    backgroundColor:"#493d8a",
+    height:15,
+    width:15,
+    borderRadius:10,
     marginHorizontal:8,
   }
 });
