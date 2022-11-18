@@ -14,10 +14,11 @@ export default function Slider() {
   const viewConfig = useRef({viewAreaCoveragePercentThreshold:50}).current;
   return (
     <View style={styles.container}>
-      <View style={{ flex:1}}>
+      <View style={{ flex:1, justifyContent:"center", alignItems:"center", flexWrap:"wrap"}}>
         <FlatList 
+        styles={{flex:3}}
         data={slides} 
-        renderItem={({item})=> <SlidesItem item={item} /> }
+        renderItem={({item})=> <SlidesItem item={item} slides={slides} scrollX={scrollX} /> }
         horizontal
         showsHorizontalScrollIndicator
         pagingEnabled
@@ -31,8 +32,9 @@ export default function Slider() {
         viewabilityConfig={viewConfig}
         ref={slidesRef}
         />
+        {/*<Paginator data={slides} scrollX={scrollX} style={{flex:3}}/>*/}
       </View>
-      <Paginator data={slides} scrollX={scrollX}/>
+      
     </View>
   );
 }

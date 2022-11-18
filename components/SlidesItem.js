@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View,Text,Image, useWindowDimensions } from 'react-native';
+import Paginator from "./Paginator";
 
-export default function SliderItem({item}) {
+export default function SliderItem({item, slides, scrollX}) {
   const {width} = useWindowDimensions();
 
   const styles = StyleSheet.create({
@@ -53,6 +54,7 @@ export default function SliderItem({item}) {
         <View style={{flex:4}}>
           <Text style={styles.description}>{item.description}</Text>
         </View>
+        <Paginator data={slides} scrollX={scrollX}/>
     </View>
   );
 }
