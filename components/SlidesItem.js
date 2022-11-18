@@ -1,4 +1,5 @@
 import React from 'react';
+import Constants from 'expo-constants';
 import { StyleSheet, View,Text,Image, useWindowDimensions } from 'react-native';
 import Paginator from "./Paginator";
 
@@ -7,27 +8,28 @@ export default function SliderItem({item, slides, scrollX}) {
 
   const styles = StyleSheet.create({
     container:{
-      flex:1,
+      flexGrow:1,
+      flexDirection:'column',
       backgroundColor:`${item.background_color}`,
-      justifyContent:"center",
-      alignItems:"center"
+      marginTop:Constants.statusBarHeight,
     },
     image:{
       flex:0.2,
       justifyContent:'center',
     },
     header:{
-      flex:1,
+      flexGrow:0.1, 
+      justifyContent:'flex-end', 
+      alignItems:'flex-start', 
       flexDirection:'row',
-      direction:'rtl',
-      justifyContent:'flex-end',
+      paddingTop:0,
     },
     header_Img:{
       width:'20%',
-      height:'40%',
-      marginTop:'8%',
-      marginRight:'5%',
+      height:'75%',
       resizeMode:'contain',
+      marginTop:'2%',
+      marginRight:'2%'
     },
     title:{
       fontWeight:'800',
@@ -47,15 +49,19 @@ export default function SliderItem({item, slides, scrollX}) {
 
   return (
     <View style={[styles.container, {width}]}>
-        <View style={styles.header}>
+        {/*<View style={styles.header}>
           <View style={{flex:1}}/>
           <Image source={item.header_Img} style={styles.header_Img}/>
-        </View>
+  </View>*/}
         {/* <Image source={item.image} style={[styles.image, {width, resizeMode: 'contain' }]}/> */}
-        <View style={{flex:4,justifyContent:'center'}}>
+        {/*<View style={{flex:4,justifyContent:'center'}}>
           <Text style={styles.description}>{item.description}</Text>
         </View>
-        <Paginator data={slides} scrollX={scrollX}/>
+<Paginator data={slides} scrollX={scrollX}/>*/}
+    <View style={styles.header}>
+      <Image source={item.header_Img} style={styles.header_Img}/>
+    </View>
+    <View style={{flexGrow:1,backgroundColor:'red'}}></View>
     </View>
   );
 }
