@@ -20,6 +20,7 @@ slides.ts archivo con json de informacion y propiedades de estilos personalizada
 - ejecutar en la consola:   
 git clone https://github.com/07krW5Hnr5ghy/finda-home.git  
 cd finda-home  
+npm install  
 npm start  
   
 - entrar en la aplicacion expo go
