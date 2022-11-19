@@ -4,7 +4,7 @@ import { StyleSheet, View,Text,Image, useWindowDimensions } from 'react-native';
 import Paginator from "./Paginator";
 
 export default function SliderItem({item, slides, scrollX}) {
-  const {width} = useWindowDimensions();
+  const {width,height} = useWindowDimensions();
 
   const styles = StyleSheet.create({
     container:{
@@ -25,10 +25,10 @@ export default function SliderItem({item, slides, scrollX}) {
       paddingTop:0,
     },
     header_Img:{
-      width:'20%',
-      height:'75%',
+      width:width/5,
+      height:height/15,
       resizeMode:'contain',
-      marginTop:'2%',
+      marginTop:'3%',
       marginRight:'2%'
     },
     title:{
@@ -43,7 +43,25 @@ export default function SliderItem({item, slides, scrollX}) {
       color:`${item.color}`,
       textAlign:'center',
       fontSize:item.description_font_size,
-      paddingHorizontal:64,
+      paddingHorizontal:item.description_horizontal_padding,
+    },
+    description_icon_title:{
+      fontWeight:'400',
+      color:`${item.color}`,
+      textAlign:'center',
+      fontSize:item.description_font_size,
+      paddingHorizontal:item.description_horizontal_padding,
+    }, description_icon:{
+      borderBottomColor:item.description_bottom_border_color, 
+      borderBottomWidth:2, 
+      paddingTop:'10%', 
+      paddingBottom:'15%', 
+      width:'60%', 
+      alignItems:"center"
+    },
+    description_message:{
+      color:item.description_message_color,
+      marginTop:'10%'
     }
   });
 
@@ -59,9 +77,23 @@ export default function SliderItem({item, slides, scrollX}) {
         </View>
 <Paginator data={slides} scrollX={scrollX}/>*/}
     <View style={styles.header}>
-      <Image source={item.header_Img} style={styles.header_Img}/>
+      <Image source={item.header_img} style={styles.header_Img}/>
     </View>
-    <View style={{flexGrow:1,backgroundColor:'red'}}></View>
+    {!item.description_icon ?
+    <View style={{flexGrow:1,flexDirection:'column',justifyContent:'center'}}>
+      <Text style={styles.description}>{item.description}</Text>
+    </View> :
+    <View style={{flexGrow:1,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+      <Text style={styles.description_icon_title}>{item.description}</Text>
+      <View style={styles.description_icon}>
+        <Image source={item.description_icon}/>
+      </View>
+      <Text style={styles.description_message}>{item.description_message}</Text>
+    </View>
+    }
+    <View style={{alignItems:"center"}}>
+      <Paginator data={slides} scrollX={scrollX}/>
+    </View>
     </View>
   );
 }
