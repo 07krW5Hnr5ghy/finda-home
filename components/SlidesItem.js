@@ -94,6 +94,12 @@ export default function SliderItem({item, slides, scrollX}) {
     <View style={{alignItems:"center"}}>
       <Paginator data={slides} scrollX={scrollX}/>
     </View>
+    {!item.footer_image ?
+     <></>:
+    <View style={{alignItems:"center", position:"absolute", bottom:0, zIndex:-1}}>
+      <Image source={item.footer_image}/>
+    </View>
+    }
     </View>
   );
 }
