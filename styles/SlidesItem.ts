@@ -1,0 +1,49 @@
+import { StyleSheet } from "react-native";
+
+export default StyleSheet.create({
+    container:{
+      flexGrow:1,
+      flexDirection:'column',
+    },
+    image:{
+      flex:0.2,
+      justifyContent:'center',
+    },
+    header:{
+      flexGrow:0.1, 
+      justifyContent:'flex-end', 
+      alignItems:'flex-start', 
+      flexDirection:'row',
+      paddingTop:0,
+    },
+    header_Img:{
+      resizeMode:'contain',
+      marginTop:'4%',
+      marginRight:'2%'
+    },
+    title:{
+      fontWeight:'800',
+      fontSize:28,
+      marginBottom:10,
+      color:'#493d8a',
+      textAlign:'center',
+    },
+    description:{
+      fontWeight:'300',
+      textAlign:'center',
+      paddingBottom:'10%'
+    },
+    description_icon_title:{
+      fontWeight:'400',
+      textAlign:'center',
+    }, description_icon:{
+      borderBottomWidth:2, 
+      paddingTop:'10%', 
+      paddingBottom:'15%', 
+      width:'60%', 
+      alignItems:"center"
+    },
+    description_message:{
+      marginTop:'10%'
+    }
+  });
