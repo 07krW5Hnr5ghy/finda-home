@@ -44,6 +44,7 @@ export default function SliderItem({item, slides, scrollX}) {
       textAlign:'center',
       fontSize:item.description_font_size,
       paddingHorizontal:item.description_horizontal_padding,
+      paddingBottom:'10%'
     },
     description_icon_title:{
       fontWeight:'400',
