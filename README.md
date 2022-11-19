@@ -2,6 +2,7 @@
 
 Componente de slides personalizables hecho para moviles con las tecnologias de react-native y typescript con scroll horizontal
 usando como base expo en un movil android, con capacidad de adicionar mas slides.
+
 ----
 ### Estructura
 
