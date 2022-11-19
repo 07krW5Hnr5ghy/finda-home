@@ -16,8 +16,16 @@ usando como base expo en un movil android, con capacidad de adicionar mas slides
 slides.ts archivo con json de informacion y propiedades de estilos personalizadas que tiene cada slide del componente
 
 ### Use 
-ejecutar en la consola: 
-git clone  
+
+- ejecutar en la consola: 
+git clone https://github.com/07krW5Hnr5ghy/finda-home.git
+cd finda-home
+npm start
+
+- entrar en la aplicacion expo go
+- escanear el codigo Qr que aparezca en la consola
+- esperar a que cargue en el telefono
+
 -----
 
 ### Slides
