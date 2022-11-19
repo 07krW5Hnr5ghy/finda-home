@@ -14,15 +14,15 @@ export default function Paginator({data, scrollX}) {
                 extrapolate:'clamp',
             });
             return <Animated.View style={[styles.dot,{
-                opacity,
+                //opacity,
                 backgroundColor:scrollX.interpolate({
                     inputRange,
-                    outputRange:['#D9D9D9','#AB4E68','#D9D9D9'],
+                    outputRange:['#717171','#AB4E68','#717171'],
                     extrapolate:'clamp',
                 }),
                 borderColor:scrollX.interpolate({
                     inputRange,
-                    outputRange:['#D9D9D9','#FFC733','#D9D9D9'],
+                    outputRange:['#717171','#FFC733','#717171'],
                 }),
                 borderWidth:scrollX.interpolate({
                     inputRange,
