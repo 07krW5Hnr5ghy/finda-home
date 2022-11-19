@@ -38,9 +38,9 @@ export default [
         description_font_size:16,
         description_horizontal_padding:'10%',
         description_icon:require('./assets/googleIcon.png'),
-        description_bottom_border_color:'#ACACAC',
+        description_bottom_border_color:'#717171',
         description_message:'Ingresar como invitado',
-        description_message_color:'#ACACAC',
+        description_message_color:'#717171',
         background_color:'#3A302E',
         color:'#D9D9D9',
     }
