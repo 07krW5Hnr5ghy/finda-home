@@ -2,21 +2,46 @@ import React,{useState, useRef} from "react";
 import {View,Text,StyleSheet,FlatList,Animated} from 'react-native';
 import slides from '../slides';
 import SlidesItem from "./SlidesItem";
-import Paginator from "./Paginator";
+import styles from "../styles/Slides";
+
+export interface Slides {
+  id:string;
+  header_img:number;
+  title:string;
+  description:string;
+  description_font_size:number;
+  description_horizontal_padding:string;
+  background_color:string;
+  color:string;
+  footer_image?:number;
+  description_icon?:number;
+  description_bottom_border_color?:string;
+  description_message?:string;
+  description_message_color?:string;
+}
+
+interface ViewItems {
+  index:number;
+  isViewable:boolean;
+  item:Slides;
+  key:string;
+}
 
 export default function Slider() {
+
   const [currentIndex,setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
-  const viewableItemsChanged = useRef(({ viewableItems}) => {
+  const viewableItemsChanged = useRef(({ viewableItems } : { viewableItems: ViewItems[] } ) => {
     setCurrentIndex(viewableItems[0].index);
   }).current;
+  console.log("viewableItemsChanged",viewableItemsChanged);
   const viewConfig = useRef({viewAreaCoveragePercentThreshold:50}).current;
   return (
     <View style={styles.container}>
       <View style={{ flex:1, justifyContent:"center", alignItems:"center", flexWrap:"wrap"}}>
         <FlatList 
-        styles={{flex:3}}
+        style={{flex:3}}
         data={slides} 
         renderItem={({item})=> <SlidesItem item={item} slides={slides} scrollX={scrollX} /> }
         horizontal
@@ -32,18 +57,7 @@ export default function Slider() {
         viewabilityConfig={viewConfig}
         ref={slidesRef}
         />
-        {/*<Paginator data={slides} scrollX={scrollX} style={{flex:3}}/>*/}
-      </View>
-      
+      </View> 
     </View>
   );
 }
-  
-  
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"center"
-    }
-});

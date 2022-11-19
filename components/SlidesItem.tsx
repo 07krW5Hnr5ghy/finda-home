@@ -1,11 +1,14 @@
 import React from 'react';
 import Constants from 'expo-constants';
-import { StyleSheet, View,Text,Image, useWindowDimensions } from 'react-native';
+import { StyleSheet, View,Text,Image, useWindowDimensions, Animated } from 'react-native';
 import Paginator from "./Paginator";
+import { Slides } from "./Slides";
 
-export default function SliderItem({item, slides, scrollX}) {
+
+
+
+export default function SliderItem({item, slides, scrollX} : {item : Slides, slides : Slides[], scrollX:unknown } ) {
   const {width,height} = useWindowDimensions();
-
   const styles = StyleSheet.create({
     container:{
       flexGrow:1,

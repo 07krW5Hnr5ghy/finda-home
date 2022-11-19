@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, View,Animated,useWindowDimensions} from 'react-native';
+import {Slides} from "./Slides";
 
-
-export default function Paginator({data, scrollX}) {
+export default function Paginator({data, scrollX} : {data : Slides[],scrollX:unknown }) {
     const {width} = useWindowDimensions();
+    console.log("scrollX",scrollX);
     return (
         <View style={{flexDirection:'row', height:64 }}>
         {data.map((_,i)=> {
