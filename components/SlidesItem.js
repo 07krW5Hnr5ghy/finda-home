@@ -28,7 +28,7 @@ export default function SliderItem({item, slides, scrollX}) {
       width:width/5,
       height:height/15,
       resizeMode:'contain',
-      marginTop:'3%',
+      marginTop:'4%',
       marginRight:'2%'
     },
     title:{
