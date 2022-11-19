@@ -8,13 +8,7 @@ export default function Paginator({data, scrollX}) {
         <View style={{flexDirection:'row', height:64 }}>
         {data.map((_,i)=> {
             const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
-            const opacity = scrollX.interpolate({
-                inputRange,
-                outputRange: [0.3,1,0.3],
-                extrapolate:'clamp',
-            });
             return <Animated.View style={[styles.dot,{
-                //opacity,
                 backgroundColor:scrollX.interpolate({
                     inputRange,
                     outputRange:['#717171','#AB4E68','#717171'],
