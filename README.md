@@ -15,7 +15,7 @@ usando como base expo en un movil android, con capacidad de adicionar mas slides
 
 slides.ts archivo con json de informacion y propiedades de estilos personalizadas que tiene cada slide del componente
 
-### Uso 
+#### Para probar el componente en el movil
 
 - ejecutar en la consola:   
 git clone https://github.com/07krW5Hnr5ghy/finda-home.git  
