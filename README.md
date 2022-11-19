@@ -15,6 +15,9 @@ usando como base expo en un movil android, con capacidad de adicionar mas slides
 
 slides.ts archivo con json de informacion y propiedades de estilos personalizadas que tiene cada slide del componente
 
+### Use 
+ejecutar en la consola: 
+git clone  
 -----
 
 ### Slides
