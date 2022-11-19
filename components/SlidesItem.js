@@ -68,15 +68,6 @@ export default function SliderItem({item, slides, scrollX}) {
 
   return (
     <View style={[styles.container, {width}]}>
-        {/*<View style={styles.header}>
-          <View style={{flex:1}}/>
-          <Image source={item.header_Img} style={styles.header_Img}/>
-  </View>*/}
-        {/* <Image source={item.image} style={[styles.image, {width, resizeMode: 'contain' }]}/> */}
-        {/*<View style={{flex:4,justifyContent:'center'}}>
-          <Text style={styles.description}>{item.description}</Text>
-        </View>
-<Paginator data={slides} scrollX={scrollX}/>*/}
     <View style={styles.header}>
       <Image source={item.header_img} style={styles.header_Img}/>
     </View>
