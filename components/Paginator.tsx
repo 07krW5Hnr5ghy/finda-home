@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View,Animated,useWindowDimensions} from 'react-native';
 import {Slides} from "./Slides";
+import styles from "../styles/Paginator";
 
 export default function Paginator({data, scrollX} : {data : Slides[],scrollX:unknown }) {
     const {width} = useWindowDimensions();
@@ -28,13 +29,3 @@ export default function Paginator({data, scrollX} : {data : Slides[],scrollX:unk
         </View>
     );
 }
-
-
-const styles = StyleSheet.create({
-  dot:{
-    height:15,
-    width:15,
-    borderRadius:10,
-    marginHorizontal:8,
-  }
-});
