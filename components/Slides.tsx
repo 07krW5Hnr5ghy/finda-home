@@ -45,7 +45,6 @@ export default function Slider() {
         data={slides} 
         renderItem={({item})=> <SlidesItem item={item} slides={slides} scrollX={scrollX} /> }
         horizontal
-        showsHorizontalScrollIndicator
         pagingEnabled
         bounces={false}
         keyExtractor={(item)=> item.id}
